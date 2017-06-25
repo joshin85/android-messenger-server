@@ -1,0 +1,37 @@
+{
+  "name": "android-messenger-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "NODE_ENV=local nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshin85/android-messenger-server.git"
+  },
+  "author": "shinjo melosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshin85/android-messenger-server/issues"
+  },
+  "homepage": "https://github.com/joshin85/android-messenger-server#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "dynamodb": "^1.0.0",
+    "es6-promisify": "^5.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "firebase-admin": "^5.0.0",
+    "joi": "^10.6.0",
+    "jwt-simple": "^0.5.1",
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^1.0.0",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
