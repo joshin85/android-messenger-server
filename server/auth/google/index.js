@@ -12,8 +12,12 @@ const jwtController = require('../session/jwt');
 const authController = require('../auth.controller');
 
 router.get('/google', passport.authenticate('google', {
-    scope: ['profile', 'https://www.googleapis.com/auth/plus.login',
-  	, 'https://www.googleapis.com/auth/plus.profile.emails.read']
+    scope: [
+        'profile', 
+        'https://www.googleapis.com/auth/plus.login',
+        'https://www.googleapis.com/auth/plus.profile.emails.read',
+        'https://www.googleapis.com/auth/contacts.readonly'        
+    ]
 }));
 
 router.get('/google/callback',

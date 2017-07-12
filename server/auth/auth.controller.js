@@ -5,7 +5,7 @@ class authController {
     AuthenticateUserAction(req, res) {
         let profile = req.profile;
         jwt.issueToken(req, res);
-        res.redirect('http://shinjo.testing.com:3000/home');
+        res.redirect(`${config.UI.baseUrl}/home`);
     }
 }
 

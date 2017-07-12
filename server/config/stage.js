@@ -1,5 +1,8 @@
 module.exports = {
     PORT : 8080,
+    UI : {
+        BASE_URL : "http://shinjo.testing.com:3000"
+    },
     JWT: {
         COOKIE : "am_sess",
         SECRET : process.env.JWT_SECRET

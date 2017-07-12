@@ -5,12 +5,11 @@ class fcmService {
     sendMessage(tokens, sender, message) {
         let msg = { 
             notification : {
-                "title" : message,
-                "body" : "from " + sender 
+                "title" : sender,
+                "body" : message 
             }
         }   
         let messages = tokens.map(token => {
-            console.log(token);
             return connector.messaging().sendToDevice(token, msg)
         })        
         return Promise.all(messages);

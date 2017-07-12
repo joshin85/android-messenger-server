@@ -7,6 +7,7 @@ module.exports = function(req, res, next) {
         let webToken = cookie[cookieName];
         let token = jwt.decodeToken(webToken);
         if(token.username) {
+            req.token = token;
             next();
         }    
     } catch(e) {

@@ -2,7 +2,7 @@ const userService = require('./user.service');
 
 class userController {
     
-    createUser(req, res) {
+    createUserAction(req, res) {
         let json = req.body;
         userService.put(json)
             .then(response => {
@@ -13,7 +13,7 @@ class userController {
             });
     }
 
-    getUser(req, res) {
+    getUserAction(req, res) {
         let query = req.query;
         let username = query.username;
         console.log(username);
@@ -26,12 +26,12 @@ class userController {
             });
     }
 
-    addTokenToUser(req, res) {;
+    addTokenToUserAction(req, res) {
+        console.log("Registering new token");
         let json = req.body;
         let username = json.username;
         let registrationToken = json.registrationToken;
-        console.log("=-=========================ADDING TOKEN", registrationToken)
-        userService.androidCreateUser(username, registrationToken)
+        userService.androidCreateOrUpdateUser(username, registrationToken)
             .then(result => res.send(result))
             .catch(err => res.send(err));
     }

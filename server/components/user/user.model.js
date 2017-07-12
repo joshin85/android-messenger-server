@@ -15,6 +15,7 @@ const User = db.define('user', {
         settings: {
             nickname: Joi.string().allow('').optional()
         },
+        conversations: Joi.array().items(Joi.string()),
         fcmTokens: Joi.array().items(Joi.string())
     },
     tableName: 'user'

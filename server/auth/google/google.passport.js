@@ -17,6 +17,8 @@ module.exports = function (passport) {
             passReqToCallback: true
         },
         function (req, accessToken, refreshToken, profile, cb) {
+            console.log(profile);
+            //Pass results forward
             req.accessToken = accessToken;
             req.profile = profile;
             User.findOrCreate(User.parseUser(profile), function (err, user) {
